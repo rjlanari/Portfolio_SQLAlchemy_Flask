@@ -20,8 +20,8 @@ def new_project():
     if request.form:
         print(request.form)
         print(request.form['title'])
-        new_project = Project(title=request.form['title'], completion_date=request.form['completion_date'],
-                              description=request.form['description'], skills=request.form['skill-list'],
+        new_project = Project(title=request.form['title'], completion_date=request.form['date'],
+                              description=request.form['desc'], skills=request.form['skill'],
                               github=request.form['github'])
         db.session.add(new_project)
         db.session.commit()
@@ -29,16 +29,27 @@ def new_project():
     return render_template('projectform.html')
 
 
-@app.route('/project/<id>/edit')
+@app.route('/project/<id>/edit', methods=['GET', 'POST'])
 def edit_project(id):
     project = Project.query.get(id)
+    if request.form:
+        project.title=request.form['title']
+        project.completion_date=request.form['date']
+        project.description=request.form['desc']
+        project.skills=request.form['skills']
+        project.github=request.form['github']
+        db.session.commit()
+        return redirect(url_for('project_detail', id=project.id))
+
     return render_template('editproject.html', project=project)
 
 
-@app.route('/project/<id>/delete')
-def delete_project():
-    pass
-
+@app.route('/delete_project/<id>')
+def delete_project(id):
+    project = Project.query.get(id)
+    db.session.delete(project)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

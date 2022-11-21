@@ -4,8 +4,8 @@ from models import db, Project, app
 
 @app.route('/')
 def index():
-    #projects = Project.query.all()
-    return render_template('index.html')
+    projects = Project.query.all()
+    return render_template('index.html', projects=projects)
 
 
 
@@ -21,11 +21,11 @@ def new_project():
         print(request.form)
         print(request.form['title'])
         new_project = Project(title=request.form['title'], completion_date=request.form['date'],
-                              description=request.form['desc'], skills=request.form['skill'],
+                              description=request.form['desc'], skills=request.form['skills'],
                               github=request.form['github'])
         db.session.add(new_project)
         db.session.commit()
-        return redirect(url_for('index', id=new_project.id))
+        return redirect(url_for('project_detail', id=new_project.id))
     return render_template('projectform.html')
 
 

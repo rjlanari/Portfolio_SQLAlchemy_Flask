@@ -35,7 +35,7 @@ def edit_project(id):
     if request.form:
         project.title=request.form['title']
         project.completion_date=request.form['date']
-        project.description=request.form['desc']
+        project.description=request.form['description']
         project.skills=request.form['skills']
         project.github=request.form['github']
         db.session.commit()

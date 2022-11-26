@@ -2,11 +2,11 @@
 Colors
 *******/
 :root {
-    --primary-text: #51475c;
-    --secondary-text: #ab6c82;
-    --primary: #475c7a;
-    --secondary: #fcbb6d;
-    --accent: #d8737f;
+    --primary-text: gray;
+    --secondary-text: #40768d;
+    --primary: #525454c7;
+    --secondary: rgba(245, 245, 118, 0.63);
+    --accent: rgb(92, 92, 92);
     --white:  #fff;
 }
 
@@ -15,8 +15,8 @@ FONT
 *******/
 
 * {
-    font-family: 'Courier New', Arial, Helvetica, sans-serif;
-    color: var(--primary-text);
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif; 
+    color: var(--primary-text); text-transform: uppercase; font-style: italic;
 }
 
 p, 
@@ -65,7 +65,7 @@ nav {
 .nav-item a:hover,
 .nav-item a:focus {
     color: var(--white);
-    background-color: var(--accent);
+    background-color: rgba(101, 114, 39, 0.596);
     padding-left: 10px;
 }
 
@@ -87,9 +87,9 @@ Header  - Homepage
 ******************/
 
 .header {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -147,7 +147,7 @@ About
 
 #about {
     text-align: center;
-    background-color: var(--primary);
+    background-image: linear-gradient(gray, rgba(245, 245, 118, 0.63));
     padding: 5%;
     position: relative;
 }
@@ -156,7 +156,7 @@ About
     display: inline-block;
     width: 0;
     height: 0;
-    border-left: 50px solid var(--primary);
+    border-left: 50px solid rgba(245, 245, 118, 0.63);
     border-bottom: 50px solid transparent;
     position: absolute;
     bottom: -50px;
@@ -169,7 +169,7 @@ About
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid var(--primary);
+    border-top: 100px solid  rgba(245, 245, 118, 0.63) ;
     position: absolute;
     bottom: -100px;
     left: 5px;
@@ -225,7 +225,7 @@ Projects
 *******/
 
 #projects {
-    background-color: var(--secondary);
+    background-image: linear-gradient(rgba(245, 245, 118, 0.63),rgba(249, 249, 213, 0.699));
     position: relative;
     text-align: center;
     padding: 5%;
@@ -235,7 +235,7 @@ Projects
     position: absolute;
     width: 0;
     height: 0;
-    border-top: 75px solid var(--white);
+    border-top: 75px solid rgba(249, 249, 213, 0.699);
     border-left: 75px solid transparent;
     right: 0;
     top: 0;
@@ -279,7 +279,7 @@ Projects
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
-    border-right: 100px solid var(--secondary);
+    border-right: 100px solid rgba(249, 249, 213, 0.699);
     border-bottom: 50px solid transparent;
     position: absolute;
     bottom: -50px;

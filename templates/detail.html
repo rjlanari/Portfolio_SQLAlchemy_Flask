@@ -10,10 +10,9 @@
         </a>
         <ul class="project-skills">
             <div>
-                <li>Catching exceptions</li>
-                <li>Creating a loop</li>
-                <li>Accepting user input</li>
-                <li>Conditional statements</li>
+                {% for skill in skill_list %}
+                <li>{{ skill }}</li>
+                {% endfor %}    
             </div>
         </ul>
     </section>    

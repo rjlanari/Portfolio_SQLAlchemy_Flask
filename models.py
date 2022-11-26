@@ -11,7 +11,7 @@ db = SQLAlchemy(app) #creates the extension
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column('Project Title', db.String())
-    completion_date = db.Column('Completion Date', db.String())
+    completion_date = db.Column('Completion Date', db.DateTime)
     description = db.Column('Description', db.Text())
     skills = db.Column('Skills', db.Text())
     github = db.Column('GitHub Link', db.String())
@@ -23,4 +23,3 @@ class Project(db.Model):
                 Description: {self.description}
                 Skills: {self.skills}
                 GitHub Link: {self.github}'''
-

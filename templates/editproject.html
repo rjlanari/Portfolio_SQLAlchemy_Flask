@@ -9,7 +9,7 @@
             <label for="title">Project Title</label>
             <input type="text" name="title" id="title" placeholder="Project Name" required value="{{ project.title }}">
             <label for="date">Completion Date</label>
-            <input type="month" name="date" id="date" required value="{{ project.completion_date }}">
+            <input type="month" name="date" id="date" required value="{{ project.completion_date.strftime('%Y-%m') }}">
             <label for="description">Description</label>
             <textarea name="description" id="description" cols="30" rows="20" placeholder="Description" required>{{ project.description }}</textarea>
             <label for="skills-list" id="skills-label">Skills</label>

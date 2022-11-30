@@ -44,7 +44,6 @@ def edit_project(id):
         project.github=request.form['github']
         db.session.commit()
         return redirect(url_for('project_detail', id=project.id))
-
     return render_template('editproject.html', project=project, projects=projects)
 
 
